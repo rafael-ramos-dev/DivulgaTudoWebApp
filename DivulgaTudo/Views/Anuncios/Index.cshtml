@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DivulgaTudo.Models.Anuncios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Sistema de Anúncios</h2>
+<hr />
+<h3>Veja abaixo os anúncios e crie novos caso seja necessário</h3>
+
+<br />
+<br />
+<br />
+<br />
+
+<p>
+    @Html.ActionLink("Criar", "Create", null, new { @class = "btn btn-primary" } )
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeAnuncio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataInicial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.investimento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeAnuncio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataInicial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.investimento)
+        </td>
+        <td >
+            @Html.ActionLink("Editar", "Edit", new { id=item.anuncioId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.anuncioId }, new { @class = "btn btn-secondary" }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=item.anuncioId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

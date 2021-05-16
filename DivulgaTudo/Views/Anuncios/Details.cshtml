@@ -1,0 +1,58 @@
+﻿@model DivulgaTudo.Models.Anuncios
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Anuncios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeAnuncio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeAnuncio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataInicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.investimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.investimento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.anuncioId }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-danger" })
+</p>
